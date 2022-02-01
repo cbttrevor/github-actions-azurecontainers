@@ -21,3 +21,8 @@ jobs:
     - name: Authenticate to Azure Container Registry
       run: |
         az acr login --name ${{ env.AZURE_ACR_NAME }}
+    - name: Build and Push Webserver
+      uses: docker/build-push-action@v2.8.0
+      with:
+        push: true
+        tags: ${{ env.AZURE_ACR_NAME }}.azurecr.io/podeserver:v1
