@@ -26,3 +26,6 @@ jobs:
       with:
         push: true
         tags: ${{ env.AZURE_ACR_NAME }}.azurecr.io/podeserver:v1
+    - name: Create Azure Container Instance Group
+      run: |
+        az container create --image ${{ env.AZURE_ACR_NAME }}.azurecr.io/podeserver:v1 --name podeserver --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --ip-address public --dns-name-label trevorpodeserver --location centralus --registry-username ${{ secrets.AZURE_APP_REGISTRATION }} --registry-password ${{ secrets.AZURE_APP_SECRET }}
