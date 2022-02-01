@@ -8,4 +8,4 @@ RUN Install-Module -Force -Name Pode
 
 COPY ["webserver.ps1", "/app/"]
 
-ENTRYPOINT ["pwsh", "-File", "/app/webserver.ps1"
+ENTRYPOINT ["pwsh", "-File", "/app/webserver.ps1"]
