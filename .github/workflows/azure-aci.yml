@@ -1,0 +1,12 @@
+name: Azure Container Instances
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  azure-aci:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Authenticate to Microsoft Azure
+      
