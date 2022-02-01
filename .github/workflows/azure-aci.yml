@@ -9,4 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Authenticate to Microsoft Azure
-      
+      run: |
+        az login --username ${{ secrets.AZURE_APP_REGISTRATION }} --password ${{ secrets.AZURE_APP_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }} --service-principal
